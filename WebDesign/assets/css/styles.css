@@ -162,9 +162,12 @@ i.glyphicon.glyphicon-search{
   color:#eee;
 }
 
-#logo{  
-  height: 30px;
-  margin-top: -4px;
+#about .logo img{      
+  position:static;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  width: 50%;
 }
 
 .input-group.input-group-lg{
