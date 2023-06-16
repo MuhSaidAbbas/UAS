@@ -23,7 +23,7 @@
           <li role="presentation"><a href="#home">HOME</a></li>
           <li role="presentation"><a href="Destination.html">DESTINATION</a></li>
           <li role="presentation"><a href="gallery.html">GALLERY</a></li>
-          <li role="presentation"><a href="#about">ABOUT</a></li>
+          <li role="presentation"><a href="Tiket.html">TIKET</a></li>
           <li role="presentation"><a href="#"><i class="glyphicon glyphicon-search"></i></a></li>
         </ul>
       </div>
@@ -111,19 +111,21 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
           <div class="thumbnail"><img src="assets/img/gambar-2-C.jpg">
+          </div>
           <div class="caption">
             <h3>Surfing</h3>
             <p class="text-justify">Di Pulau Dewata ini memang tersebar begitu banyak pantai dengan karakteristik yang berbeda-beda. Mulai dari keindahan alamnya, hingga air laut serta ombaknya. Tak heran jika Bali menjadi surganya para peselancar karena berbagai tempat-tempat surfing di Bali yang populer...</p>
             <button class="btn btn-default"tyoe="button">READ MORE</button>
           </div>
-          </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
           <div class="thumbnail"><img src="assets/img/gambar-2-D.jpg">
           <div class="caption">
+            <div id="demo">
             <h3>Senorkeling</h3>
             <p class="text-justify">snorkeling Bali ini kamu bisa berenang bersama ikan pari Manta yang biasanya berenang dalam kelompok. Menuju Crystal Bay, kamu akan menemui satu lagi ikan unik bernama ikan mola mola...</p>
-            <button class="btn btn-default"tyoe="button">READ MORE</button>
+            <button type="button" onclick="loadDoc()">READ MORE</button>
+          </div>
           </div>
           </div>
         </div>
@@ -170,8 +172,19 @@
     </div>
   </div>
   <!-- about -->
+  <script>
+    function loadDoc() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("demo").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "pantai.txt", true);
+      xhttp.send();
+    }
+    </script>
   <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

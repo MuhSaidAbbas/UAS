@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIKET</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container" id="navbar">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand navbar-link"><img src="assets/img/logo.png"></a>
+        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      </div>
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li role="presentation"><a href="index.html">HOME</a></li>
+          <li role="presentation"><a href="news.html">DESTINATION</a></li>
+          <li role="presentation"><a href="gallery.html">GALLERY</a></li>
+          <li role="presentation"><a href="Tiket.html">TIKET</a></li>
+          <li role="presentation"><a href="#"><i class="glyphicon glyphicon-search"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- navbar -->
+
+  <!-- Tiket -->
+  <form>
+    <div class="container mt-5" id="tiket">
+        <h1>PEMESANAN TIKET</h1>
+        <div class="row">
+        <div class="col">
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                   <label for="id_pesanan">ID Pesanan</label>
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" id="id_pesanan" min="0" value="0">
+                </div>
+            </div>
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="nama_pemesan">Nama Pemesan</label>
+                </div>
+                <div class="col">
+                        <input type="text" class="form-control" id="nama pemesan">
+                    </select>
+                </div>
+            </div>
+             <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="nama_provinsi">Nama Provinsi</label>
+                </div>
+                <div class="col">
+                        <select id="provinsi" class="form-control" id="nama provinsi">
+                        <option selected>Pilih provinsi</option>
+                    </select>
+                </div>
+            </div>    
+            
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="nama_kabupaten">Nama Kabupaten/Kota</label>
+                </div>
+                <div class="col">
+                        <select id="kota" class="form-control" id="nama kabupaten">
+                        <option selected>Pilih Provinsi Terlebih Dahulu</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="nama_kecematan">Nama Kecamatan</label>
+                </div>
+                <div class="col">
+                        <select id="kecamatan" class="form-control">
+                        <option selected>Pilih Kabupaten atau Kota Terlebih Dahulu</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="nama_kelurahan">Nama Kelurahan</label>
+                </div>
+                <div class="col">
+                        <select id="kelurahan" class="form-control" id="nama kelurahan">
+                        <option selected>Pilih Kecematan Terlebih Dahulu</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="no_hp">No HP:</label>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="no_hp">   
+                </div>
+            </div>
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="catatan">Catatan:</label>
+                </div>
+                <div class="col">
+                    <textarea id="catatan" class="form-control" name="catatan">Catatan</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="tanggal">Tanggal:</label>
+                </div>
+                <div class="col">
+                    <input type="date" class="form-control" id="tanggal" name="tanggal" >
+                </div>
+            </div>
+            <div>
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="jenis_pesanan">Nama Barang</label>
+                </div>
+                <div class="col">
+                    <select class="form-control" id="jenis_pesanan" onchange="isiHarga()">
+                        <option value="">-- Pilih Jenis Pesanan --</option>
+                        <option value="snack">Snack Box - Rp. 15.000</option>
+                        <option value="nasi">Nasi  Box - Rp. 30.000</option>
+                        <option value="pras">Pak Hadi - Rp. 40.000</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="jumlah_pesanan">Jumlah Pesanan:</label>
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" id="jumlah_pesanan" min="0" value="0" onchange="hitungTotal()">      
+                </div>
+            </div>
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="subtotal_pesanan">Subtotal Pesanan:</label>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="subtotal_pesanan" readonly>
+                </div>
+            </div>
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="pajak_pesanan">Pajak Pesanan:</label>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="pajak_pesanan" readonly>
+                </div>
+            </div>
+            <div class="form-group row g-3 align-items-center">
+                <div class="col-form-label col-3">
+                    <label for="total_pesanan">Total Pesanan</label>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="total_pesanan" readonly>
+                </div>
+            </div>
+      <div class="col-form-labelp row g-3 align-items-center">
+        <div class="col"></div>
+        <div class="col-form-label">
+      <button type="button" class="btn btn-primary" onclick="hitungPembayaran()">Simpan</button>
+      <button type="reset" class="btn btn-danger">Batal</button>
+      </div>
+    </div>
+    </form>
+    </div>
+    </div>
+  </div>
+  <!-- Tiket -->
+
+  <!-- about -->
+  <div id="about">
+    <div class="container footer">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class='logo'><h2><img src="assets/img/logo.png"></h2>
+        <p>@iCONIC2023</p></div>
+      </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <h2>Jika ada masukan silahkan ketik di bawah ini</h2>
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" value="">
+            <div class="input-group-btn">
+              <button class="btn btn-primary" type="submit">Submit </button>
+            </div>
+          </div>
+          <div id="icon"><i class="fa fa-instagram"></i><i class="fa fa-facebook-official"></i><i class="fa fa-twitter-square"></i><i class="fa fa-youtube-play"></i></div>
+        </div>
+    </div>
+  </div>
+  <!-- about -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="ajax.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
