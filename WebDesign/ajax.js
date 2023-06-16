@@ -115,3 +115,40 @@ Swal.fire(
     'Silahkan menunggu 1X24 jam',
   )
 }
+
+function abort(){
+const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger'
+    },
+    buttonsStyling: false
+  })
+  
+  swalWithBootstrapButtons.fire({
+    title: 'Apakah Anda Yakin?',
+    text: "You won't be able to revert this!",
+    icon: 'Perhatian',
+    showCancelButton: true,
+    confirmButtonText: 'Ya, hapus data yang ada!',
+    cancelButtonText: 'Tidak, lanjutkan!',
+    reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+      swalWithBootstrapButtons.fire(
+        'Hapus!',
+        'Data yang Anda masukkan telah dihapus.',
+        'Sukses'
+      )
+    } else if (
+      /* Read more about handling dismissals below */
+      result.dismiss === Swal.DismissReason.cancel
+    ) {
+      swalWithBootstrapButtons.fire(
+        'Dibatalkan',
+        'Data yang Anda masukkan terselamatkan',
+        'Macet'
+      )
+    }
+  })
+}
