@@ -57,3 +57,55 @@ function loadDoc() {
                 })
             })
         });
+
+    
+
+
+FFT = 5000000
+DFT = 2550000
+BCT = 8000000
+ECT = 4000000
+PECT = 10000000
+
+var pilihtiket = document.getElementById("jenis tiket")
+
+pilihtiket.addEventListener("change", function(){
+
+    var out = document.getElementById("jenis tiket").value
+
+    if (out == "fft"){
+        document.getElementById("subtotal pesanan").value = FFT
+    } else if (out == "dft"){
+        document.getElementById("subtotal pesanan").value = DFT
+    } else if (out == "bct"){
+        document.getElementById("subtotal pesanan").value = BCT
+    } else if (out == "ect"){
+        document.getElementById("subtotal pesanan").value = ECT
+    } else if (out == "pect"){
+        document.getElementById("subtotal pesanan").value = PECT
+    }
+})
+
+
+    
+    var member = document.getElementById("membership")
+    member.addEventListener("change", function(){
+    
+      var jumlah = document.getElementById("jumlah pesanan").value
+      var harga = document.getElementById("subtotal pesanan").value
+      var total = harga * jumlah
+      document.getElementById("total pesanan").value = total
+
+
+    if(member.value == "member"){
+    var diskon = total * 0.15
+    document.getElementById("diskon").value = diskon
+    var bayar = total - diskon
+    } else if (member.value == "non"){
+    var diskon = 0
+    bayar = total
+  }
+  document.getElementById("total pembayaran").value = bayar
+}
+)
+    
