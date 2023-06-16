@@ -108,4 +108,10 @@ pilihtiket.addEventListener("change", function(){
   document.getElementById("total pembayaran").value = bayar
 }
 )
-    
+function clickme(){
+Swal.fire(
+    'Sukses!',
+    'Tiket Anda dalam Proses',
+    'Silahkan menunggu 1X24 jam',
+  )
+}
